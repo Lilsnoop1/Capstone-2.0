@@ -1,0 +1,66 @@
+<%- include("partials/header.ejs") %>
+<body>
+    <main>
+        <% if(locals.tit > 0){%>
+            <div class="container-boi">
+                <h1 class="title"><%= Titty[0].name %></h1>
+            </div>
+        <%}else if (locals.tit === 0){%>
+            <div class="container-boi">
+                <h1 class="title">No Entry Found</h1>
+            </div>
+
+        <%}else{%>
+            <div class="container-boi"><h1 class="title">Find Holidays on Specific Dates</h1></div>
+        <%} %>
+        <div>
+            <form action="/submit" class="former" method="POST">
+                <label class="labelIndex" id="chootar" for="">
+                    <p class="loru">Day</p>
+                    <div class="dropdown-1">
+                        <input type="number" min="1" max="31" name="text" class="textbox" id="zero">
+                        <img src="dropdown.png" class="dropdowner" id="first" alt="">
+                    </div>
+                    <div class="i">
+                        <% for(let i=1;i<32;i++){%>
+                            <p class="list-item teesra"><%= i %></p>
+                        <%}%>
+                        <p class="list-item teesra tinghidden-1">28</p>
+                        <p class="list-item teesra tinghidden-2">29</p>
+                        <p class="list-item teesra tinghidden-3">30</p>
+                        <p class="list-item teesra tinghidden-4">31</p>
+                   
+                </div>
+                </label>
+                <label class="labelIndex" for="">
+                    <p class="loru-2">Month</p>
+                    <div class="dropdown-2">
+                        <input type="number" min="1" max="12"  name="text"  class="textbox" id="one">
+                        <img src="dropdown.png" class="dropdowner" id="second" alt="">
+                    </div>
+                    <div class="j hahaaa">
+                        <% for(let z=1;z<13;z++){%>
+                            <p class="list-item pehla"><%= z %></p>
+                        <%} %>
+                    </div>
+                </label>
+                <label class="labelIndex" for="">
+                    <p class="loru-3">Year</p>
+                    <div class="dropdown-3">
+                        <input type="number" min="1979" max="2031"  name="text" class="textbox" id="two">
+                        <img src="dropdown.png" class="dropdowner" id="third" alt="">
+                    </div>
+                    <div class="k" >
+                        <% for(let x=1990;x<2031;x++){%>
+                            <p class="list-item doosra"><%= x %></p>
+                        <%} %>
+                    </div>
+                </label>
+                <div class="labelIndex">
+                    <input type="submit" class="submit" id="">
+                </div>
+            </form>
+        </div>                            
+    </main>
+
+<%- include("partials/footer.ejs") %>
